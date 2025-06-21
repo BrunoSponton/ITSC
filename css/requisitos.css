@@ -1,0 +1,230 @@
+.requisitos-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.requisitos-title {
+  text-align: center;
+  color: #003366;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.requisitos-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(to right, #0077cc, #00aaff);
+  border-radius: 2px;
+}
+
+.requisitos-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.requisitos-section:hover {
+  transform: translateY(-5px);
+}
+
+.requisitos-section h2 {
+  color: #002244;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0077cc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.requisitos-section h2 i {
+  color: #0077cc;
+}
+
+.requisitos-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.requisitos-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+}
+
+.requisitos-list li:last-child {
+  border-bottom: none;
+}
+
+.requisitos-list li i {
+  color: #28a745;
+  font-size: 1.2rem;
+}
+
+.important-note {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+  border-left: 4px solid #ffc107;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.important-note h3 {
+  color: #856404;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.important-note h3 i {
+  color: #ffc107;
+}
+
+.important-note p {
+  color: #856404;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.cooperadora-options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cooperadora-option {
+  background: linear-gradient(135deg, #e6f7ff 0%, #cceeff 100%);
+  border: 1px solid #0077cc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.cooperadora-option:hover {
+  transform: scale(1.03);
+}
+
+.cooperadora-option h3 {
+  color: #0077cc;
+  margin-top: 0;
+}
+
+.cooperadora-option p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0056b3;
+  margin: 10px 0;
+}
+
+.especiales {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #6c757d;
+}
+
+.carreras-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.carreras-list li {
+  background: #e9ecef;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.requisitos-especiales {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.requisitos-especiales h3 {
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.vacunas-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.vacunas-list li {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fecha-entrega {
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .requisitos-title {
+    font-size: 1.8rem;
+  }
+  
+  .cooperadora-options {
+    flex-direction: column;
+  }
+  
+  .carreras-list {
+    flex-direction: column;
+  }
+  
+  .vacunas-list {
+    grid-template-columns: 1fr;
+  }
+}

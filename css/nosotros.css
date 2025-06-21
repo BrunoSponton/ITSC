@@ -1,0 +1,207 @@
+/* Sección Nosotros */
+.nosotros-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.nosotros-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.nosotros-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.nosotros-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0077cc, #00aaff);
+  border-radius: 2px;
+}
+
+.nosotros-subtitle {
+  font-size: 1.2rem;
+  color: #005599;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.nosotros-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.directiva-section {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.directiva-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #003366;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #0077cc;
+  font-size: 1.6rem;
+}
+
+.directiva-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.directiva-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.directiva-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #0077cc 0%, #00aaff 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.directiva-icon i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.directiva-info h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.directiva-info p {
+  color: #005599;
+  font-weight: 500;
+}
+
+.instituto-info {
+  flex: 2;
+  min-width: 300px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instituto-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.instituto-info p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e1eeff 100%);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #0077cc;
+  margin: 30px 0;
+}
+
+.highlight p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #003366;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Mapa */
+.map-section {
+  margin-top: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.map-title {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 45%; /* Proporción del mapa */
+  background: #f1f1f1;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive para la sección Nosotros */
+@media (max-width: 768px) {
+  .nosotros-title {
+    font-size: 2rem;
+  }
+  
+  .directiva-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .directiva-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .map-container {
+    padding-bottom: 70%;
+  }
+}
