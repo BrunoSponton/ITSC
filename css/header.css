@@ -67,6 +67,7 @@ header {
 .dropdown {
   position: absolute;
   top: calc(100% + 5px);
+  top: 100%; 
   left: 0;
   background: #ffffff;
   color: #003366;
@@ -76,6 +77,8 @@ header {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   display: none;
   z-index: 100;
+  display: block; 
+  visibility: hidden;
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -87,6 +90,15 @@ header {
   opacity: 1;
   transform: translateY(0);
   animation: fadeInUp 0.4s ease;
+  z-index: 100;
+  pointer-events: none; 
+}
+
+.menu-item:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; 
 }
 
 @keyframes fadeInUp {
