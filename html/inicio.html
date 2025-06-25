@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - ITSC</title>
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+</head>
+<body>
+    <!-- Carrusel principal -->
+    <section class="carrusel-container">
+        <div class="carrusel">
+            <img src="../img/carrusel1.jpg" alt="Foto Instituto" class="carrusel-img activo">
+            <img src="../img/carrusel2.jpg" alt="Foto Instituto" class="carrusel-img">
+            <img src="../img/carrusel.jpg" alt="Foto Instituto" class="carrusel-img">
+            <div class="filtro-azul"></div>
+        </div>
+        <img src="../img/its.png" alt="Escudo ITSC" class="escudo-superpuesto">
+    </section>
+
+ <!-- Carrusel de Novedades -->
+<section class="novedades">
+  <h2>Novedades</h2>
+  <div class="carousel-container">
+    <button onclick="scrollCarousel(-1)" class="carousel-button"></button>
+    <button onclick="scrollCarousel(1)" class="carousel-button"></button>
+    <!-- <button onclick="scrollCarousel(-1)" class="carousel-button">‹</button>
+    <button onclick="scrollCarousel(1)" class="carousel-button">›</button> -->
+    <!-- Carrusel de tarjetas -->
+      <div id="carousel" >
+        <!-- Tarjeta -->
+        <div class="novedad-card">
+            <img src="../img/2.jpg"" alt="Descripción" style="width: 100%; border-radius: 8px 8px 0 0; object-fit: cover; height: 150px;">
+            <h3>Acuerdo institucional de convivencia</h3>
+            <p style="font-size: 0.9rem; color: #666;">04.06.2025 11:09</p>
+            <p>Encuentro entre docentes y coordinadores del ITSC para revisar el Código de Convivencia...</p>
+          </div>
+          
+  
+        <!-- Repetir tarjetas -->
+        <div class="novedad-card">   
+            <img src="../img/1.webp" alt="Descripción" style="width: 100%; border-radius: 8px 8px 0 0; object-fit: cover; height: 150px;">      
+          <h3>Asamblea de Elección de Cooperadora</h3>
+          <p style="font-size: 0.9rem; color: #666;">23.05.2025 10:29</p>
+          <p>Se realizó la Asamblea General Ordinaria para renovar autoridades...</p>
+        </div>
+  
+        <div class="novedad-card">     
+          <img src="../img/3.webp" alt="Descripción" style="width: 100%; border-radius: 8px 8px 0 0; object-fit: cover; height: 150px;">     
+          <h3>Segunda Jornada de Formación Situada</h3>
+          <p style="font-size: 0.9rem; color: #666;">16.05.2025 10:12</p>
+          <p>Capacitación docente sobre PEI y Plan de Mejora Institucional (PMI)...</p>
+        </div>
+        <div class="novedad-card">
+            <img src="../img/4.jpeg" alt="Descripción" style="width: 100%; border-radius: 8px 8px 0 0; object-fit: cover; height: 150px;">
+            <h3>Acuerdo institucional de convivencia</h3>
+            <p style="font-size: 0.9rem; color: #666;">04.06.2025 11:09</p>
+            <p>Encuentro entre docentes y coordinadores del ITSC para revisar el Código de Convivencia...</p>
+          </div>
+          
+        <div class="novedad-card">   
+            <img src="../img/5.jpg" alt="Descripción" style="width: 100%; border-radius: 8px 8px 0 0; object-fit: cover; height: 150px;">      
+          <h3>Asamblea de Elección de Cooperadora</h3>
+          <p style="font-size: 0.9rem; color: #666;">23.05.2025 10:29</p>
+          <p>Se realizó la Asamblea General Ordinaria para renovar autoridades...</p>
+        </div>  
+        <!-- Agregá más tarjetas si querés -->
+      </div>
+    </div>
+  </section>
+  
+
+<section class="banner-tecnicaturas">
+  <div class="contenido">
+    <div class="texto">
+      <h2>Estudiá con nosotros</h2>
+      <p>Conocé nuestras tecnicaturas con rápida salida laboral.</p>
+    </div>
+    <a href="#tecnicaturas" class="boton">Ver Tecnicaturas</a>
+  </div>
+</section>
+
+
+       <!-- Mapa de sedes -->
+    <section class="mapa-section">
+        <h2>Nuestras Sedes</h2>
+        <div id="mapa"></div>
+    </section>
+
+    
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/inicio.js"></script>
+  
+</body>
+</html>
