@@ -36,7 +36,10 @@ function loadContent(url) {
       } else if (url.includes('inicio.html')) {
         loadInicioStyles();
         loadInicioScript();
-      }
+      } else if (url.includes('tecnis.html')) {
+        loadTecnicaturasStyles();
+}
+
 
       // Esperar el div mapa, si existe
       const wait = setInterval(() => {
@@ -71,6 +74,12 @@ function loadInicioStyles() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = 'css/inicio.css';
+  document.head.appendChild(link);
+}
+function loadTecnicaturasStyles() {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'css/tecnis.css';
   document.head.appendChild(link);
 }
 
@@ -127,6 +136,15 @@ function setupMenuEvents() {
       window.location.hash = 'inicio';
     });
   });
+  document.querySelectorAll('.dropdown a[href="#tecnis"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    loadContent('html/tecnis.html');
+    document.title = 'ITSC - Tecnicaturas';
+    window.location.hash = 'tecnis';
+  });
+});
+
 }
 
 // MAPA DE SEDES
