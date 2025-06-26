@@ -1,6 +1,8 @@
 // Cargar contenido inicial
 window.addEventListener('load', () => {
-  loadContent('html/inicio.html');
+  loadContent('html/inicio.html').then(() => {
+    setupInicioEvents(); // Vincula el botón de tecnicaturas si existe
+  });
 });
 
 // Cargar el header
@@ -36,10 +38,10 @@ function loadContent(url) {
       } else if (url.includes('inicio.html')) {
         loadInicioStyles();
         loadInicioScript();
+        setupInicioEvents(); // Reasignar botón al recargar inicio
       } else if (url.includes('tecnis.html')) {
         loadTecnicaturasStyles();
-}
-
+      }
 
       // Esperar el div mapa, si existe
       const wait = setInterval(() => {
@@ -83,21 +85,17 @@ function loadTecnicaturasStyles() {
   document.head.appendChild(link);
 }
 
-
-// Script 
-
+// Scripts
 function loadInicioScript() {
   const script = document.createElement('script');
   script.src = 'js/inicio.js';
   document.body.appendChild(script);
 }
-
 function loadFAQsScript() {
   const script = document.createElement('script');
   script.src = 'js/faqs.js';
   document.body.appendChild(script);
 }
-
 
 // Configurar menú
 function setupMenuEvents() {
@@ -136,18 +134,22 @@ function setupMenuEvents() {
       window.location.hash = 'inicio';
     });
   });
-  document.querySelectorAll('.dropdown a[href="#tecnis"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    loadContent('html/tecnis.html');
-    document.title = 'ITSC - Tecnicaturas';
-    window.location.hash = 'tecnis';
-  });
-});
-
 }
 
-// MAPA DE SEDES
+// Detectar botón de tecnicaturas cargado dinámicamente en inicio.html
+function setupInicioEvents() {
+  const btnTecnicaturas = document.getElementById('btn-tecnicaturas');
+  if (btnTecnicaturas) {
+    btnTecnicaturas.addEventListener('click', function (e) {
+      e.preventDefault();
+      loadContent('html/tecnis.html');
+      document.title = 'ITSC - Tecnicaturas';
+      window.location.hash = 'tecnis';
+    });
+  }
+}
+
+// Mapa de sedes
 function initMapaSedes() {
   if (!window.L) {
     const leafletScript = document.createElement('script');
@@ -179,12 +181,11 @@ function renderMapa() {
   });
 
   // Carrusel rotativo simple
-setInterval(() => {
-  const imagenes = document.querySelectorAll('.carrusel-img');
-  let actual = [...imagenes].findIndex(img => img.classList.contains('activo'));
-  imagenes[actual].classList.remove('activo');
-  const siguiente = (actual + 1) % imagenes.length;
-  imagenes[siguiente].classList.add('activo');
-}, 4000);
-
+  setInterval(() => {
+    const imagenes = document.querySelectorAll('.carrusel-img');
+    let actual = [...imagenes].findIndex(img => img.classList.contains('activo'));
+    imagenes[actual].classList.remove('activo');
+    const siguiente = (actual + 1) % imagenes.length;
+    imagenes[siguiente].classList.add('activo');
+  }, 4000);
 }

@@ -169,19 +169,60 @@ section.novedades {
 
 
 /* --------------------------------------------------Mapa de sedes */
-.mapa-section {
-    padding: 60px 20px;
-    background-color: #f1f5f9;
-    max-width: 1200px;
-    margin: 0 auto;
+.seccion-sedes-cba {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
-#mapa {
-    height: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+.info-sedes {
+  flex: 1 1 400px;
 }
+
+.info-sedes h2 {
+  font-size: 2rem;
+  color: #003554;
+  margin-bottom: 20px;
+}
+
+.info-sedes p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.lista-sedes {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.lista-sedes li {
+  margin-bottom: 10px;
+}
+
+.mapa-cba {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.mapa-cba img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
 
 /* --------------------------------------------------TEcnicaturas */
 

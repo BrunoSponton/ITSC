@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - ITSC</title>
     <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
+       <!-- Aquí pones Leaflet: CSS y JS -->
+  
+    <!-- PARA EL MAPA -->
+       <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-sA+4QPEPoSxA5vvPb1Nme5u4irJbNl+cl8JHg6TmA6A="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-o9N1j7kPhf9szKtf60PRPcofnOELc+4fI9v+0pTVLTU="
+    crossorigin=""
+  ></script>
 
 </head>
 <body>
@@ -29,8 +43,8 @@
         <h1>Conocé nuestras <span>Tecnicaturas</span></h1>
         <p>Formate en carreras con alta salida laboral y aprendé con docentes comprometidos con tu desarrollo profesional.</p>
         
-        <a href="html/tecnis.html" id="btn-tecnicaturas">VER TECNICATURAS</a>
-        
+        <a href="#tecnis" id="btn-tecnicaturas">VER TECNICATURAS</a>
+
     </div>
     </section>
 
@@ -89,15 +103,74 @@
 
 
        <!-- Mapa de sedes -->
-    <section class="mapa-section">
+    <!-- <section class="mapa-section">
         <h2>Nuestras Sedes</h2>
         <div id="mapa"></div>
-    </section>
+    </section> -->
 
-    
-    
+  <section class="seccion-sedes-cba" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 40px; background: linear-gradient(90deg, #e3f2fd, #bbdefb); border-radius: 16px; margin: 40px 0;">
+  
+  <!-- Imagen del mapa -->
+  <div class="mapa-cba-img" style="flex: 1 1 400px; min-height: 500px; background-image: url('img/mapa-cordoba.png'); background-size: cover; background-position: center; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"></div>
+
+  <!-- Info de sedes -->
+  <div class="info-sedes" style="flex: 1 1 400px; display: flex; flex-direction: column; justify-content: center;">
+  <ul class="lista-sedes" style="list-style: none; padding: 0; font-size: 1rem; color: #1a237e;">
+    <h2>Nuestras sedes en Córdoba</h2>
+    <p>Contamos con presencia en distintas localidades estratégicas de la provincia. ¡Descubrí cuál es la más cercana a vos!</p>
+    <ul class="lista-sedes">
+      <li>✔ Sede Central, Rio Negro 71</li>
+      <li>✔ Villa Libertador</li>
+      <li>✔ La France</li>
+      <li>✔ Juarez Celman</li>
+      <li>✔ Malvinas</li>
+    </ul>
+  </div>
+</section>
+
+<!-- <script>
+  // Coordenadas aproximadas de Córdoba Capital para centrar el mapa
+  const centroCordoba = [-31.4201, -64.1888];
+
+  // Crear el mapa
+  const mapa = L.map('mapaCba').setView(centroCordoba, 7); // zoom 7 para toda la provincia
+
+  // Cargar tiles de OpenStreetMap con estilo moderno
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© OpenStreetMap'
+  }).addTo(mapa);
+
+  // Lista de sedes con coordenadas
+  const sedes = [
+    { nombre: 'Córdoba Capital', coords: [-31.4201, -64.1888] },
+    { nombre: 'Villa María', coords: [-32.4196, -63.2389] },
+    { nombre: 'Río Cuarto', coords: [-33.1305, -64.3496] },
+    { nombre: 'San Francisco', coords: [-30.7265, -62.0833] },
+    { nombre: 'Jesús María', coords: [-30.9007, -64.1837] },
+    { nombre: 'Villa Dolores', coords: [-31.9467, -65.1258] }
+  ];
+
+  // Agregar marcadores al mapa con popups
+  sedes.forEach(sede => {
+    L.marker(sede.coords)
+      .addTo(mapa)
+      .bindPopup(`<b>${sede.nombre}</b>`);
+  });
+</script> -->
+
+
+       <!-- Modal de plan de estudio -->
+    <!-- <div id="modal-plan" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar-modal">&times;</span>
+        <img src="img/planSoft.jpg" alt="Plan de estudio" class="imagen-plan">
+      </div>
+    </div> -->
+
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="js/inicio.js"></script>
-  
+        
+
 </body>
 </html>
