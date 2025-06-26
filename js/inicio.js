@@ -10,11 +10,6 @@ if (imagenes.length > 0) {
   setInterval(cambiarImagen, 5000);
 }
 
-// VER TECNICATURAS  
-
-
-
-
 // 2. Carrusel de novedades
 function scrollCarousel(direction) {
   const carousel = document.getElementById('carousel');
