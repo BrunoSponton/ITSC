@@ -19,13 +19,28 @@ header {
 }
 
 .logo {
-  font-size: 2.2rem;
-  font-weight: bold;
+  /* Mantén estos estilos: */
   padding: 8px 18px;
   background: linear-gradient(135deg, #005599 0%, #003d70 100%);
   margin-right: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  /* Elimina estas propiedades: */
+  /* font-size: 2.2rem; */
+  /* font-weight: bold; */
+  
+  /* Añade estos nuevos: */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Añade este nuevo selector al final de las reglas .logo */
+.logo img {
+  height: 40px; /* Ajusta según el tamaño de tu imagen */
+  width: auto;
+  object-fit: contain;
 }
 
 .title {

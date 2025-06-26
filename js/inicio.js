@@ -57,31 +57,37 @@ function scrollCarousel(direction) {
 
 
 // 3. Mapa de sedes
-// document.addEventListener("DOMContentLoaded", function () {
-//   const centroCordoba = [-31.4201, -64.1888];
+try {
+  if (typeof L !== 'undefined' && document.getElementById('mapa')) {
+    const mapa = L.map('mapa').setView([-34.6037, -58.3816], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mapa);
 
-//   const mapa = L.map('mapaCba').setView(centroCordoba, 7);
+    const sedes = [
+      {
+        nombre: "Sede Central",
+        coordenadas: [-34.6037, -58.3816],
+        direccion: "Rio Negro  71"
+      },
+      {
+        nombre: "Sede Norte",
+        coordenadas: [-34.5517, -58.4563],
+        direccion: "Av. Cabildo 2100"
+      },
+      {
+        nombre: "Sede Oeste",
+        coordenadas: [-34.6354, -58.5327],
+        direccion: "Av. Rivadavia 10500"
+      }
+    ];
 
-//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 18,
-//     attribution: '© OpenStreetMap'
-//   }).addTo(mapa);
-
-//   const sedes = [
-//     { nombre: 'Córdoba Capital', coords: [-31.4201, -64.1888] },
-//     { nombre: 'Villa María', coords: [-32.4196, -63.2389] },
-//     { nombre: 'Río Cuarto', coords: [-33.1305, -64.3496] },
-//     { nombre: 'San Francisco', coords: [-30.7265, -62.0833] },
-//     { nombre: 'Jesús María', coords: [-30.9007, -64.1837] },
-//     { nombre: 'Villa Dolores', coords: [-31.9467, -65.1258] }
-//   ];
-
-//   sedes.forEach(sede => {
-//     L.marker(sede.coords)
-//       .addTo(mapa)
-//       .bindPopup(`<b>${sede.nombre}</b>`);
-//   });
-// });
+    sedes.forEach(sede => {
+      const marker = L.marker(sede.coordenadas).addTo(mapa);
+      marker.bindPopup(`<b>${sede.nombre}</b><br>${sede.direccion}`);
+    });
+  }
+} catch (e) {
+  console.error("Error en el mapa:", e);
+}
 
 
 
